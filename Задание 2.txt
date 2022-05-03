@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .getScreenSize{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<button class="getScreenSize" type="button">Получить размеры экрана</button>
+
+<script>
+document.querySelector('.getScreenSize').addEventListener('click', ()=>{
+    let screenWidth = window.screen.width;
+    let screenHeight = window.screen.height;
+    let allScreen = `Размеры экрана: ${screenWidth}px и ${screenHeight}px`;
+    alert(allScreen);
+    let clientWidth = document.documentElement.clientWidth;
+    let clientHeight = document.documentElement.clientHeight;
+    let clientSize = `Размер окна браузера: ${clientWidth}px и ${clientHeight}px`;
+    alert(clientSize);
+    if (window.matchMedia("(max-width:1000px)").matches){
+    }
+    else
+    {
+        document.querySelector('.getScreenSize').style.backgroundColor = "green";
+        setTimeout(()=>{document.querySelector('.getScreenSize').style.backgroundColor = "red";}, 2000);
+    }
+})
+</script>
+</body>
+</html>

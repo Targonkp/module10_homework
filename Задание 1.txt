@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        button{
+            outline:none;
+            border:none;
+            display:flex;
+            padding:10px 20px;
+            border-radius:5px;
+            cursor:pointer;
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            transition: 0.3s;
+            background: #00FF7F;
+            color:#0000CD;
+        }
+
+        button:hover{
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.47);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.47);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.47);
+            transition: 0.3s;
+        }
+
+        button:active{
+            background: #228B22;
+            color:#ffffff;
+        }
+
+        .btn-icon{
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<button>
+    <div class="btn">Запрос данных</div>
+    <div class="btn-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-left-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-5.904-2.854a.5.5 0 1 1 .707.708L6.707 9.95h2.768a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.475a.5.5 0 1 1 1 0v2.768l4.096-4.097z"/>
+        </svg>
+    </div>
+</button>
+
+<script>let buttonEl = document.querySelector("button");
+let iconEl = document.querySelector(".btn-icon");
+let firstIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-left-circle" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-5.904-2.854a.5.5 0 1 1 .707.708L6.707 9.95h2.768a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.475a.5.5 0 1 1 1 0v2.768l4.096-4.097z"/>
+</svg>`;
+let secondIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-left-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-5.904-2.803a.5.5 0 1 1 .707.707L6.707 10h2.768a.5.5 0 0 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.525a.5.5 0 0 1 1 0v2.768l4.096-4.096z"/>
+</svg>`;
+let x = true;
+function changeIcon(){
+    if (x){
+        iconEl.innerHTML = secondIcon;
+    }
+    else
+    {
+        iconEl.innerHTML = firstIcon;
+    }
+    x =! x;
+
+}
+
+
+buttonEl.addEventListener(
+    'click',
+    changeIcon
+)</script>
+</body>
+</html>
